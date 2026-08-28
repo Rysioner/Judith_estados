@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cartas para Judith</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+<div class="judith-app" id="judithApp">
+
+  <div class="dust"></div>
+
+  <main class="scene">
+
+    <!-- =========================
+         PORTADA
+    ========================== -->
+
+    <section class="hero">
+
+      <!--
+        IMAGEN GRANDE DE PORTADA
+
+        Coloca aquí tu imagen.
+        Por ejemplo:
+
+        style="
+          background-image: url('images/portada.jpg');
+          background-size: cover;
+          background-position: center;
+        "
+      -->
+
+      <div class="image-slot" style="
+          background-image: url('assets/cartas/portada.png');
+          background-size: cover;
+          background-position: center;">
+        
+      </div>
+
+      <div class="hero-copy">
+
+        <div class="eyebrow">
+          Para mi dama
+        </div>
+
+        <h1>
+          Judith ♡
+        </h1>
+
+        <p>
+          He dejado algunas cartas para ti.
+          <br>
+          Elige la que tu corazón necesite esta noche.
+        </p>
+
+        <button
+          class="open-book"
+          id="openBook"
+          type="button"
+        >
+          Abrir el libro
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         LAS 10 CARTAS
+    ========================== -->
+
+    <section id="book" hidden>
+
+      <h2 class="section-title">
+        Elige la carta que necesites hoy
+      </h2>
+
+      <section
+        class="cards"
+        id="cards"
+      ></section>
+
+    </section>
+
+
+    <div
+      class="footer"
+      id="footer"
+      hidden
+    >
+      Siempre habrá una carta aquí para ti, gatita. ♡
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       MODAL DE CARTA
+  ========================== -->
+
+  <div
+    class="modal"
+    id="modal"
+    aria-hidden="true"
+  >
+
+    <div class="book-frame">
+
+      <!-- =========================
+           BARRA LATERAL: LISTA DE CARTAS
+      ========================== -->
+
+      <nav class="letters-nav" aria-label="Lista de cartas">
+
+        <div class="nav-header">
+          <div>Cartas para ti, mi dama</div>
+          <div class="nav-heart">♡</div>
+        </div>
+
+        <div class="nav-list" id="navList"></div>
+
+      </nav>
+
+
+      <!-- =========================
+           CARTA ABIERTA
+      ========================== -->
+
+      <div class="book-main">
+
+        <button
+          class="close"
+          id="closeBtn"
+          type="button"
+        >
+          Cerrar carta ×
+        </button>
+
+
+        <!-- =========================
+             ESCENARIO: SOBRE + CARTA
+             (se superponen para que la carta
+             parezca salir de adentro del sobre)
+        ========================== -->
+
+        <div class="book-stage">
+
+          <!-- SOBRE CERRADO -->
+
+          <div
+            class="envelope"
+            id="envelope"
+            hidden
+          >
+
+            <div class="envelope-body">
+
+              <div class="envelope-postmark"></div>
+
+              <div class="envelope-flap"></div>
+
+              <button
+                class="envelope-seal"
+                id="envelopeSeal"
+                type="button"
+                aria-label="Abrir la carta"
+              >
+                ✦
+                <span class="envelope-sprig" aria-hidden="true">🌿</span>
+              </button>
+
+            </div>
+
+            <div class="envelope-tape tape-1"></div>
+            <div class="envelope-tape tape-2"></div>
+
+          </div>
+
+
+          <article
+            class="letter"
+            id="letter"
+            aria-hidden="true"
+          >
+
+            <div class="letter-inner">
+
+              <section class="letter-copy">
+
+                <h2>
+                  <span class="letter-icon" id="letterIcon"></span>
+                  <span id="letterTitle"></span>
+                </h2>
+
+                <div class="rule"></div>
+
+                <div id="letterText"></div>
+
+                <div class="signature">
+                  — Santiago :3 ♡
+                </div>
+
+                <button
+                  class="back"
+                  id="backBtn"
+                  type="button"
+                >
+                  ← Volver a las cartas
+                </button>
+
+              </section>
+
+
+              <!--
+                AQUÍ IRÁ LA IMAGEN GRANDE
+                DE CADA CARTA
+              -->
+
+              <section class="letter-art" id="letterArt">
+                <img src="assets/carta.png" alt="Ilustración de la carta">
+                <span class="wax-seal" aria-hidden="true">✦</span>
+              </section>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
